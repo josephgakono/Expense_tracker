@@ -117,4 +117,4 @@ If browser storage is cleared, the saved expense history will also be removed.
 
  ## Links
  [Github repository](https://github.com/josephgakono/Expense_tracker)
- [live demo}()
+ [live demo](https://josephgakono.github.io/Expense_tracker/)
