@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div class="intro">
+          <p class="eyebrow">Expense Tracker</p>
+          <h1>Track what you spend today without losing the bigger picture.</h1>
+          <p class="lead">
+            Add expenses, filter by category, review your total for the day, and
+            keep everything saved in local storage between refreshes.
+          </p>
+        </div>
+
+        <div class="today">
+          <p class="label">Today</p>
+          <p class="date" data-current-date>Loading date...</p>
+          <p class="note">
+            Object-oriented logic + functional array methods + local storage.
+          </p>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel form">
+          <div class="head">
+            <p class="kicker">Add Expense</p>
+            <h2>Log a new purchase in a few seconds</h2>
+          </div>
+
+          <form class="formbox" data-expense-form novalidate>
+            <label class="field">
+              <span>Description</span>
+              <input
+                type="text"
+                name="description"
+                placeholder="Coffee, groceries, taxi..."
+                maxlength="60"
+                required
+              />
+            </label>
+
+            <div class="row">
+              <label class="field">
+                <span>Amount</span>
+                <input
+                  type="number"
+                  name="amount"
+                  min="0.01"
+                  step="0.01"
+                  placeholder="0.00"
+                  required
+                />
+              </label>
+
+              <label class="field">
+                <span>Category</span>
+                <input
+                  type="text"
+                  name="category"
+                  list="category-suggestions"
+                  placeholder="Food, transport, bills..."
+                  maxlength="30"
+                  required
+                />
+              </label>
+            </div>
+
+            <datalist id="category-suggestions">
+              <option value="Food"></option>
+              <option value="Transport"></option>
+              <option value="Bills"></option>
+              <option value="Shopping"></option>
+              <option value="Health"></option>
+              <option value="Entertainment"></option>
+            </datalist>
+
+            <button class="btn" type="submit">Add expense</button>
+            <p class="msg" data-form-message role="status"></p>
+          </form>
+        </section>
+
+        <section class="panel stats">
+          <div class="head">
+            <p class="kicker">Overview</p>
+            <h2>See totals, categories, and what is currently in focus</h2>
+          </div>
+
+          <div class="cards">
+            <article class="stat">
+              <p class="text">Total expenses</p>
+              <p class="value" data-total-amount>$0.00</p>
+            </article>
+
+            <article class="stat">
+              <p class="text">Visible entries</p>
+              <p class="value" data-entry-count>0 expenses</p>
+            </article>
+
+            <article class="stat">
+              <p class="text">Categories used</p>
+              <p class="value" data-category-count>0 categories</p>
+            </article>
+          </div>
+
+          <div class="bar">
+            <label class="field pick">
+              <span>Filter by category</span>
+              <select data-category-filter>
+                <option value="All">All categories</option>
+              </select>
+            </label>
+
+            <p class="hint" data-filter-note>Showing every category</p>
+          </div>
+        </section>
+
+        <section class="panel list">
+          <div class="head">
+            <p class="kicker">Expense List</p>
+            <h2>Every recorded expense in one clean view</h2>
+          </div>
+
+          <ul class="items" data-expense-list>
+            <li class="empty">
+              <h3>No expenses yet</h3>
+              <p>Add your first expense to start tracking today&apos;s spending.</p>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
